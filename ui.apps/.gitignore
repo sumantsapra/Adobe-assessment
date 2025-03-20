@@ -1,2 +1,3 @@
 src/main/content/jcr_root/apps/eventRegistration/clientlibs/clientlib-site
 src/main/content/jcr_root/apps/eventRegistration/clientlibs/clientlib-dependencies
+/target/

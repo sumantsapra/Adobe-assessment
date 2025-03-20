@@ -1,0 +1,247 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:createdBy": "admin",
+  "jcr:created": "Wed Mar 19 2025 00:05:08 GMT+1100",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "jcr:createdBy": "admin",
+    "jcr:title": "Event Registration Home Page",
+    "pwaOrientation": "any",
+    "cq:template": "/conf/eventRegistration/settings/wcm/templates/spa-page-template",
+    "jcr:created": "Wed Mar 19 2025 00:05:08 GMT+1100",
+    "pwaDisplay": "standalone",
+    "cq:lastModified": "Wed Mar 19 2025 16:54:39 GMT+1100",
+    "pwaCachestrategy": "staleWhileRevalidate",
+    "sling:resourceType": "eventRegistration/components/page",
+    "cq:lastModifiedBy": "admin",
+    "root": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "wcm/foundation/components/responsivegrid",
+      "responsivegrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/responsivegrid",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "text": "\u003Cp\u003EHello World!\u003C/p\u003E",
+          "sling:resourceType": "eventRegistration/components/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured"
+          }
+        }
+      }
+    },
+    "cq:featuredimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "admin",
+      "jcr:lastModified": "Wed Mar 19 2025 16:54:39 GMT+1100",
+      "sling:resourceType": "core/wcm/components/image/v3/image",
+      "altValueFromDAM": "false"
+    }
+  },
+  "event-registration": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:createdBy": "admin",
+    "jcr:created": "Wed Mar 19 2025 16:55:04 GMT+1100",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "jcr:createdBy": "admin",
+      "jcr:title": "Event Registration",
+      "cq:template": "/conf/eventRegistration/settings/wcm/templates/page-content",
+      "jcr:created": "Wed Mar 19 2025 16:55:04 GMT+1100",
+      "cq:lastModified": "Thu Mar 20 2025 12:01:14 GMT+1100",
+      "sling:resourceType": "eventRegistration/components/page",
+      "cq:lastModifiedBy": "admin",
+      "root": {
+        "jcr:primaryType": "nt:unstructured",
+        "layout": "responsiveGrid",
+        "sling:resourceType": "eventRegistration/components/container",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "layout": "responsiveGrid",
+          "sling:resourceType": "eventRegistration/components/container",
+          "title": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "eventRegistration/components/title"
+          },
+          "container": {
+            "jcr:primaryType": "nt:unstructured",
+            "layout": "responsiveGrid",
+            "sling:resourceType": "eventRegistration/components/container",
+            "teaser": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "admin",
+              "jcr:title": "Event Registration",
+              "imageFromPageImage": "false",
+              "fileReference": "/content/dam/eventRegistration/AdobeStock_1029356576_Preview.jpeg",
+              "jcr:lastModifiedBy": "admin",
+              "jcr:created": "Thu Mar 20 2025 00:11:45 GMT+1100",
+              "titleFromPage": "false",
+              "alt": "Test",
+              "jcr:description": "\u003Cp\u003ERegister for th eevent before its too late !!!!\u003C/p\u003E\r\n",
+              "linkTarget": "_self",
+              "jcr:lastModified": "Thu Mar 20 2025 11:50:49 GMT+1100",
+              "descriptionFromPage": "false",
+              "sling:resourceType": "eventRegistration/components/teaser",
+              "isDecorative": "false",
+              "textIsRich": "true",
+              "altValueFromDAM": "false",
+              "cq:styleIds": [
+                "1742392021382"
+              ]
+            },
+            "customcontainer": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "admin",
+              "action": "/content/usergenerated/eventRegistration/au/en/home/event-registration/cq-gen1742427757838/",
+              "jcr:lastModifiedBy": "admin",
+              "redirect": "/content/eventRegistration/au/en/home/thank-you-for-registerting",
+              "jcr:created": "Thu Mar 20 2025 10:42:37 GMT+1100",
+              "actionURL": "/bin/eventRegistration",
+              "jcr:lastModified": "Thu Mar 20 2025 11:29:47 GMT+1100",
+              "errorMessage": "Something went wrong",
+              "sling:resourceType": "eventRegistration/components/form/customContainer",
+              "actionType": "core/wcm/components/form/actions/rpc",
+              "cq:styleIds": [
+                "1742427713920"
+              ],
+              "externalServiceEndPointUrl": "/bin/eventRegistration",
+              "text": {
+                "jcr:primaryType": "nt:unstructured",
+                "jcr:createdBy": "admin",
+                "jcr:title": "First Name",
+                "jcr:lastModifiedBy": "admin",
+                "required": "true",
+                "jcr:created": "Thu Mar 20 2025 00:40:09 GMT+1100",
+                "name": "firstName",
+                "rows": "2",
+                "type": "text",
+                "jcr:lastModified": "Thu Mar 20 2025 00:41:59 GMT+1100",
+                "sling:resourceType": "eventRegistration/components/form/text",
+                "requiredMessage": "This is a Mandatory field"
+              },
+              "text_copy": {
+                "jcr:primaryType": "nt:unstructured",
+                "jcr:createdBy": "admin",
+                "jcr:title": "Last Name",
+                "jcr:lastModifiedBy": "admin",
+                "required": "true",
+                "jcr:created": "Thu Mar 20 2025 00:40:09 GMT+1100",
+                "name": "lastName",
+                "rows": "2",
+                "type": "text",
+                "jcr:lastModified": "Thu Mar 20 2025 00:41:49 GMT+1100",
+                "sling:resourceType": "eventRegistration/components/form/text",
+                "requiredMessage": "This is a Mandatory field"
+              },
+              "text_569479146": {
+                "jcr:primaryType": "nt:unstructured",
+                "jcr:createdBy": "admin",
+                "jcr:title": "ID",
+                "constraintMessage": "Please enter valid number only.",
+                "jcr:lastModifiedBy": "admin",
+                "required": "true",
+                "jcr:created": "Thu Mar 20 2025 00:43:38 GMT+1100",
+                "name": "id",
+                "rows": "2",
+                "type": "number",
+                "jcr:lastModified": "Thu Mar 20 2025 00:46:11 GMT+1100",
+                "sling:resourceType": "eventRegistration/components/form/text",
+                "requiredMessage": "This is a Mandatory Field"
+              },
+              "text_1246064367": {
+                "jcr:primaryType": "nt:unstructured",
+                "jcr:createdBy": "admin",
+                "jcr:title": "Email",
+                "constraintMessage": "Please enter correct email format",
+                "jcr:lastModifiedBy": "admin",
+                "required": "true",
+                "jcr:created": "Thu Mar 20 2025 00:44:28 GMT+1100",
+                "name": "email",
+                "rows": "2",
+                "type": "email",
+                "jcr:lastModified": "Thu Mar 20 2025 00:45:36 GMT+1100",
+                "sling:resourceType": "eventRegistration/components/form/text",
+                "requiredMessage": "This is a Mandatory Field"
+              },
+              "button": {
+                "jcr:primaryType": "nt:unstructured",
+                "jcr:createdBy": "admin",
+                "jcr:title": "Register Now",
+                "jcr:lastModifiedBy": "admin",
+                "jcr:created": "Thu Mar 20 2025 00:42:45 GMT+1100",
+                "name": "RegisterNow",
+                "type": "submit",
+                "jcr:lastModified": "Thu Mar 20 2025 00:43:05 GMT+1100",
+                "sling:resourceType": "eventRegistration/components/form/button"
+              }
+            }
+          }
+        }
+      },
+      "FormData": {
+        "jcr:primaryType": "nt:unstructured",
+        "2025-03-20T11-31-19.978580": {
+          "jcr:primaryType": "nt:unstructured",
+          "lastName": "Sapra",
+          "ID": "111",
+          "email": "sumant.sapra@gmail.com",
+          "firstName": "Sumant"
+        }
+      }
+    }
+  },
+  "thank-you-for-registerting": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:createdBy": "admin",
+    "jcr:created": "Thu Mar 20 2025 01:02:57 GMT+1100",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "jcr:createdBy": "admin",
+      "jcr:title": "Thank you for registerting",
+      "cq:template": "/conf/eventRegistration/settings/wcm/templates/page-content",
+      "jcr:created": "Thu Mar 20 2025 01:02:57 GMT+1100",
+      "cq:lastModified": "Thu Mar 20 2025 01:03:43 GMT+1100",
+      "sling:resourceType": "eventRegistration/components/page",
+      "cq:lastModifiedBy": "admin",
+      "root": {
+        "jcr:primaryType": "nt:unstructured",
+        "layout": "responsiveGrid",
+        "sling:resourceType": "eventRegistration/components/container",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "layout": "responsiveGrid",
+          "sling:resourceType": "eventRegistration/components/container",
+          "title": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "eventRegistration/components/title"
+          },
+          "container": {
+            "jcr:primaryType": "nt:unstructured",
+            "layout": "responsiveGrid",
+            "sling:resourceType": "eventRegistration/components/container",
+            "teaser": {
+              "jcr:primaryType": "nt:unstructured",
+              "altValueFromPageImage": "false",
+              "jcr:createdBy": "admin",
+              "imageFromPageImage": "true",
+              "jcr:lastModifiedBy": "admin",
+              "jcr:created": "Thu Mar 20 2025 01:03:07 GMT+1100",
+              "titleFromPage": "true",
+              "alt": "Thank you",
+              "linkTarget": "_self",
+              "jcr:lastModified": "Thu Mar 20 2025 01:03:43 GMT+1100",
+              "descriptionFromPage": "true",
+              "sling:resourceType": "eventRegistration/components/teaser",
+              "isDecorative": "false",
+              "textIsRich": "true",
+              "cq:styleIds": [
+                "1742392021382"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

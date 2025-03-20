@@ -1,0 +1,45 @@
+/* usage
+.selector {
+  color: red;
+
+  @include screen-size('small') {
+    color: blue;
+  }
+}
+*/
+
+$breakpoints: (
+    // < 414px
+    'small-mobile':
+        (
+            max-width: 413px,
+        ),
+    'small': (
+        min-width: 0,
+    ),
+    'landscape-mobile': (
+        min-width: 550px,
+    ),
+    'medium': (
+        min-width: 768px,
+    ),
+    'large': (
+        min-width: 1024px,
+    ),
+    'xlarge': (
+        min-width: 1025px,
+    )
+) !default;
+
+@mixin screen-size($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    } @else {
+        // If the key doesn't exist in the map
+        @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. Available breakpoints are: #{map-keys($breakpoints)}.';
+    }
+}

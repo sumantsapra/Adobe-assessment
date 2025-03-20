@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2025-03-20T11:29:47.733+11:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/eventRegistration/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Event Registration"
+        sling:resourceType="eventRegistration/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="eventRegistration/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="eventRegistration/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="eventRegistration/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="eventRegistration/components/container"
+                    layout="responsiveGrid">
+                    <teaser
+                        cq:styleIds="[1742392021382]"
+                        jcr:created="{Date}2025-03-20T00:11:45.488+11:00"
+                        jcr:createdBy="admin"
+                        jcr:description="&lt;p>Register for th eevent before its too late !!!!&lt;/p>&#xd;&#xa;"
+                        jcr:lastModified="{Date}2025-03-20T00:46:32.322+11:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Event Registration"
+                        sling:resourceType="eventRegistration/components/teaser"
+                        alt="Test"
+                        altValueFromDAM="false"
+                        descriptionFromPage="false"
+                        fileReference="/content/dam/eventRegistration/asset.jpg"
+                        imageFromPageImage="false"
+                        isDecorative="false"
+                        linkTarget="_self"
+                        textIsRich="true"
+                        titleFromPage="false"/>
+                    <customcontainer
+                        cq:styleIds="[1742427713920]"
+                        jcr:created="{Date}2025-03-20T10:42:37.836+11:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-03-20T11:29:47.730+11:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="eventRegistration/components/form/customContainer"
+                        action="/content/usergenerated/eventRegistration/au/en/home/event-registration/cq-gen1742427757838/"
+                        actionType="core/wcm/components/form/actions/rpc"
+                        actionURL="/bin/eventRegistration"
+                        errorMessage="Something went wrong"
+                        externalServiceEndPointUrl="/bin/eventRegistration"
+                        redirect="/content/eventRegistration/au/en/home/thank-you-for-registerting">
+                        <text
+                            jcr:created="{Date}2025-03-20T00:40:09.430+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2025-03-20T00:41:59.666+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="First Name"
+                            sling:resourceType="eventRegistration/components/form/text"
+                            name="firstName"
+                            required="true"
+                            requiredMessage="This is a Mandatory field"
+                            rows="2"
+                            type="text"/>
+                        <text_copy
+                            jcr:created="{Date}2025-03-20T00:40:09.430+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2025-03-20T00:41:49.462+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Last Name"
+                            sling:resourceType="eventRegistration/components/form/text"
+                            name="lastName"
+                            required="true"
+                            requiredMessage="This is a Mandatory field"
+                            rows="2"
+                            type="text"/>
+                        <text_569479146
+                            jcr:created="{Date}2025-03-20T00:43:38.687+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2025-03-20T00:46:11.458+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="ID"
+                            sling:resourceType="eventRegistration/components/form/text"
+                            constraintMessage="Please enter valid number only."
+                            name="id"
+                            required="true"
+                            requiredMessage="This is a Mandatory Field"
+                            rows="2"
+                            type="number"/>
+                        <text_1246064367
+                            jcr:created="{Date}2025-03-20T00:44:28.551+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2025-03-20T00:45:36.405+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Email"
+                            sling:resourceType="eventRegistration/components/form/text"
+                            constraintMessage="Please enter correct email format"
+                            name="email"
+                            required="true"
+                            requiredMessage="This is a Mandatory Field"
+                            rows="2"
+                            type="email"/>
+                        <button
+                            jcr:created="{Date}2025-03-20T00:42:45.541+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2025-03-20T00:43:05.489+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Register Now"
+                            sling:resourceType="eventRegistration/components/form/button"
+                            name="RegisterNow"
+                            type="submit"/>
+                    </customcontainer>
+                </container>
+            </container>
+        </root>
+        <FormData jcr:primaryType="nt:unstructured">
+            <_x0032_025-03-20T11-31-19.978580
+                jcr:primaryType="nt:unstructured"
+                email="sumant.sapra@gmail.com"
+                firstName="Sumant"
+                ID="111"
+                lastName="Sapra"/>
+        </FormData>
+    </jcr:content>
+</jcr:root>

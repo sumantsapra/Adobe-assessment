@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
     <rep:policy/>
@@ -9,13 +9,48 @@
                 <container jcr:primaryType="nt:unstructured">
                     <form-container
                         jcr:description="Allows the form components to be dropped into this core form container."
+                        jcr:lastModified="{Date}2025-03-20T00:48:53.685+11:00"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Content Form"
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="[/apps/eventRegistration/components/form/button,/apps/eventRegistration/components/form/hidden,/apps/eventRegistration/components/form/options,/apps/eventRegistration/components/form/text]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0 jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="form_container--event"
+                                        cq:styleId="1742392085828"
+                                        cq:styleLabel="Event Register Form"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
                     </form-container>
                 </container>
+                <customContainer jcr:primaryType="nt:unstructured">
+                    <policy_1742427709893
+                        jcr:lastModified="{Date}2025-03-20T10:42:26.080+11:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Event Registration Content"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/eventRegistration/components/form/button,/apps/eventRegistration/components/form/hidden,/apps/eventRegistration/components/form/options,/apps/eventRegistration/components/form/text]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0 jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="form_container--event"
+                                        cq:styleId="1742427713920"
+                                        cq:styleLabel="Event Registration Form"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
+                    </policy_1742427709893>
+                </customContainer>
             </form>
             <languagenavigation jcr:primaryType="nt:unstructured">
                 <policy_xfm
@@ -34,11 +69,11 @@
                     jcr:title="Content Image"
                     sling:resourceType="wcm/core/components/policy/policy"
                     allowedRenditionWidths="[320,480,600,800,1024,1200,1600]"
-                    disableLazyLoading="false"
-                    enableAssetDelivery="true"
                     allowUpload="false"
                     altValueFromDAM="true"
+                    disableLazyLoading="false"
                     displayPopupTitle="true"
+                    enableAssetDelivery="true"
                     isDecorative="false"
                     jpegQuality="{Long}85"
                     titleValueFromDAM="true"
@@ -238,10 +273,13 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2025-03-20T10:41:37.924+11:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Content"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:Event Registration - Content,/apps/eventRegistration/components/form/container]">
+                    components="[group:Event Registration - Content,/apps/eventRegistration/components/form/container,/apps/eventRegistration/components/form/customContainer]"
+                    layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -308,12 +346,49 @@
             <teaser jcr:primaryType="nt:unstructured">
                 <policy_1575031387650
                     jcr:description="Sets the title size to H3."
+                    jcr:lastModified="{Date}2025-03-20T00:47:32.777+11:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Content Teaser"
                     sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h1,h2,h3,h4,h5,h6]"
+                    showTitleType="false"
                     titleType="h3">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="teaser--banner-event "
+                                    cq:styleId="1742392021382"
+                                    cq:styleLabel="Event Register Banner"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
                 </policy_1575031387650>
+                <policy_99168208880916
+                    jcr:lastModified="{Date}2025-03-20T00:38:52.666+11:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Register Event"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h1,h2,h3,h4,h5,h6]"
+                    showTitleType="false"
+                    titleType="h2">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="teaser--banner-event"
+                                    cq:styleId="1742390076395"
+                                    cq:styleLabel="Register Event"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_99168208880916>
             </teaser>
             <download jcr:primaryType="nt:unstructured">
                 <policy_1575032193319
@@ -345,9 +420,7 @@
     <wcm jcr:primaryType="nt:unstructured">
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
-                <responsivegrid jcr:primaryType="nt:unstructured">
-            
-                </responsivegrid>
+                <responsivegrid jcr:primaryType="nt:unstructured"/>
             </components>
         </foundation>
     </wcm>

@@ -1,0 +1,286 @@
+@use 'sass:list';
+@use 'sass:map';
+
+/* stylelint-disable */
+$fonts: (
+    text-style-aliases: (
+        //h1 variation
+        emphasis64: (
+            weight: 700,
+            size: 64,
+            line-height: 1.12,
+            key: Poppins,
+        ),
+        emphasis44: (
+            weight: 700,
+            size: 44,
+            line-height: 1.18,
+            key: Poppins,
+        ),
+        emphasis38: (
+            weight: 700,
+            size: 38,
+            line-height: 1.21,
+            key: Poppins,
+        ),
+        emphasis30: (
+            weight: 700,
+            size: 30,
+            line-height: 1.27,
+            key: Poppins,
+        ),
+        //from h2 to h6 below
+        minimal48: (
+            weight: 600,
+            size: 48,
+            line-height: 1.17,
+            key: Poppins,
+        ),
+        minimal36: (
+            weight: 600,
+            size: 36,
+            line-height: 1.22,
+            key: Poppins,
+        ),
+        minimal34: (
+            weight: 600,
+            size: 34,
+            line-height: 1.12,
+            key: Poppins,
+        ),
+        minimal28: (
+            weight: 600,
+            size: 28,
+            line-height: 1.29,
+            key: Poppins,
+        ),
+        minimal24: (
+            weight: 600,
+            size: 24,
+            line-height: 1.33,
+            key: Poppins,
+        ),
+        minimal20: (
+            weight: 600,
+            size: 20,
+            line-height: 1.4,
+            key: Poppins,
+        ),
+        minimal16: (
+            weight: 600,
+            size: 16,
+            line-height: 1.5,
+            key: Poppins,
+        ),
+        minimal14: (
+            weight: 600,
+            size: 14,
+            line-height: 1.5,
+            key: Poppins,
+        ),
+        //all the body fonts
+        essential24: (
+            weight: 400,
+            size: 24,
+            line-height: 1.33,
+            key: Poppins,
+        ),
+        essential20: (
+            weight: 400,
+            size: 20,
+            line-height: 1.4,
+            key: Poppins,
+        ),
+        essential16: (
+            weight: 400,
+            size: 16,
+            line-height: 1.5,
+            key: Poppins,
+        ),
+        essential14: (
+            weight: 400,
+            size: 14,
+            line-height: 1.43,
+            key: Poppins,
+        ),
+        essential12: (
+            weight: 400,
+            size: 12,
+            line-height: 1.5,
+            key: Poppins,
+        ),
+    ),
+);
+/* stylelint-enable */
+
+/* stylelint-disable */
+$TextStyle-names: HeadingHero, HeadingBanner, HeadingB, HeadingBStatement,
+    HeadingC, HeadingD, HeadingE, HeadingF, TextBodyXL, TextBodyL, TextBody,
+    TextBodyS, TextBodyXS;
+/* stylelint-enable */
+
+$text-style-aliases: map.get($fonts, text-style-aliases);
+$_sm-xs: (
+    'HeadingHero': 'emphasis44',
+    'HeadingBanner': 'emphasis30',
+    'HeadingBStatement': 'minimal36',
+    'HeadingB': 'minimal28',
+    'HeadingC': 'minimal24',
+    'HeadingD': 'minimal20',
+    'HeadingE': 'minimal16',
+    'HeadingF': 'minimal14',
+    'TextBodyXL': 'essential24',
+    'TextBodyL': 'essential20',
+    'TextBody': 'essential16',
+    'TextBodyS': 'essential14',
+    'TextBodyXS': 'essential12',
+);
+
+/// Text style (viewportLG) mappings to the font type
+$_lg: (
+    'HeadingHero': 'emphasis64',
+    'HeadingBanner': 'emphasis38',
+    'HeadingBStatement': 'minimal48',
+    'HeadingB': 'minimal34',
+    'HeadingC': 'minimal24',
+    'HeadingD': 'minimal20',
+    'HeadingE': 'minimal16',
+    'HeadingF': 'minimal14',
+    'TextBodyXL': 'essential24',
+    'TextBodyL': 'essential20',
+    'TextBody': 'essential16',
+    'TextBodyS': 'essential14',
+    'TextBodyXS': 'essential12',
+);
+
+@function px-to-rem($value) {
+    $remValue: calc($value / 16) + rem;
+
+    @return $remValue;
+}
+
+@mixin getFont($text-style-alias) {
+    @if map-has-key($text-style-aliases, $text-style-alias) {
+        $style-alias: map.get($text-style-aliases, $text-style-alias);
+        $weight: map.get($style-alias, weight);
+        $size: map.get($style-alias, size);
+        $line-height: map.get($style-alias, line-height);
+        $family: map.get($style-alias, key);
+
+        margin: 0;
+        font:
+            #{$weight} #{px-to-rem($size)}/ #{$line-height} #{$family},
+            #{$defaultFamily};
+    } @else {
+        @error #{sass-notice-no-map(#{$text-style-alias}, #{print-names($text-style-aliases)})};
+    }
+}
+
+@mixin TextStyle($text-style-name, $color: null) {
+    $mapping-exists: list.index($TextStyle-names, $text-style-name);
+
+    @if $color != null {
+        color: $color;
+    }
+
+    @debug '#{map.get($_sm-xs, $text-style-name)}';
+    @include getFont('#{map.get($_sm-xs, $text-style-name)}');
+
+    @include screen-size('large') {
+        @include getFont('#{map.get($_lg, $text-style-name)}');
+    }
+
+    @if not $mapping-exists {
+        @error #{sass-notice-no-map(#{$text-style-name}, #{print-names($TextStyle-names)})};
+    }
+}
+
+@function if-important($important) {
+    @return #{if($important, '!important', '')};
+}
+
+// font mixins
+@mixin buildFonts(
+    $font-family,
+    $font-size-sm,
+    $font-size-md,
+    $font-size-lg,
+    $font-weight,
+    $line-height-ratio,
+    $margin-bottom,
+    $important: false
+) {
+    font-family: $font-family if-important($important);
+    font-weight: $font-weight if-important($important);
+    letter-spacing: 0 if-important($important);
+    margin-bottom: $margin-bottom if-important($important);
+
+    @include screen-size('small') {
+        line-height: #{$line-height-ratio * $font-size-sm} if-important($important);
+        font-size: $font-size-sm if-important($important);
+    }
+
+    @include screen-size('medium') {
+        line-height: #{$line-height-ratio * $font-size-md} if-important($important);
+        font-size: $font-size-md if-important($important);
+    }
+
+    @include screen-size('large') {
+        line-height: #{$line-height-ratio * $font-size-lg} if-important($important);
+        font-size: $font-size-lg if-important($important);
+    }
+}
+
+// TITLE FONTS
+@mixin aware-title2($bottom-margin: 0, $important: false) {
+    @include buildFonts(
+        $font-family-01,
+        $font-size-sm-06,
+        $font-size-md-05,
+        $font-size-lg-07,
+        $font-weight-bold,
+        $line-height-title-ratio,
+        $bottom-margin,
+        $important
+    );
+}
+
+@mixin aware-title3($bottom-margin: 0, $important: false) {
+    @include buildFonts(
+        $font-family-01,
+        $font-size-sm-04,
+        $font-size-md-04,
+        $font-size-lg-05,
+        $font-weight-bold,
+        $line-height-title-ratio,
+        $bottom-margin,
+        $important
+    );
+}
+
+// BODY FONTS
+@mixin aware-body-md($bottom-margin: 0, $important: false) {
+    @include buildFonts(
+        $font-family-01,
+        $font-size-sm-03,
+        $font-size-md-03,
+        $font-size-lg-03,
+        $font-weight-regular,
+        $line-height-body-ratio,
+        $bottom-margin,
+        $important
+    );
+}
+
+@mixin aware-body-sm($bottom-margin: 0, $important: false) {
+    @include buildFonts(
+        $font-family-01,
+        $font-size-sm-01,
+        $font-size-md-01,
+        $font-size-lg-01,
+        $font-weight-regular,
+        $line-height-body-ratio,
+        $bottom-margin,
+        $important
+    );
+}

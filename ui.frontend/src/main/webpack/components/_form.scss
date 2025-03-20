@@ -1,1 +1,49 @@
 .cmp-form {}
+
+.form_container--event {
+    padding-top: 80px;
+}
+    
+
+.cmp-form-text {
+  margin: 10px 0;
+  font-family: $font-family-sans-serif;
+  padding: 0 300px;
+}
+
+.cmp-form-text__text {
+  border: 1px solid $gray-light;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: $font-size-small;
+  font-weight: $font-weight-semi-bold;
+  height: 48px;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+
+.cmp-form-text__text--error {
+  border: solid 1px $pink;
+}
+
+.cmp-form-button {
+  color: $text-color;
+  background: $brand-primary 0% 0% no-repeat padding-box;
+  border: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: $font-size-base;
+  font-family: $font-family-sans-serif;
+  font-weight: $font-weight-bold;
+  padding: .75rem 1rem;
+  min-width: 180px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: 600px;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
